@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/posts/{post}', [PostController::class, 'update']);
+Route::get('/posts/{post}', [PostController::class, 'edit']);
+
+Route::post('/create', [PostController::class, 'store']);
+Route::get('/create', [[PostController::class, 'create']]);
+
+Route::get('/', [PostController::class, 'posts']);
