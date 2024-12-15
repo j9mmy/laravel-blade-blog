@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Post;
+use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -28,17 +30,9 @@ class PostController extends Controller
         ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StorePostRequest $request): RedirectResponse
     {
-        $validated = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required',
-            'user_id' => 'required|exists:users,id'
-        ], [], [
-            'user_id' => 'user'
-        ]);
-
-        Post::create($validated);
+        Post::create($request->validated());
 
         return redirect('/')->with('success', 'Post created successfully');
     }
@@ -52,15 +46,10 @@ class PostController extends Controller
         ]);
     }
 
-    public function update(Request $request, $postId): RedirectResponse
+    public function update(UpdatePostRequest $request, $postId): RedirectResponse
     {
-        $validated = $request->validate([
-            'title' => 'required|max:255',
-            'content' => 'required'
-        ]);
-
         $post = Post::findOrFail($postId);
-        $post->update($validated);
+        $post->update($request->validated());
 
         return redirect('/')->with('success', 'Post updated successfully');
     }
