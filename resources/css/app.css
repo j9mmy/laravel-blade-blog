@@ -3,25 +3,69 @@
 @tailwind utilities;
 
 @layer base {
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Syne', sans-serif;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button,
+  a {
+    font-family: "Syne", sans-serif;
+  }
 
-    p {
-        font-family: 'Space Grotesk', sans-serif;
-    }
+  p,
+  span,
+  label,
+  input,
+  textarea {
+    font-family: "Space Grotesk", sans-serif;
+  }
 
-    @font-face {
-        font-family: 'Syne';
-        src: url('../../public/fonts/Syne-VariableFont_wght.ttf') format('truetype');
-        font-weight: 100 900;
-        font-style: normal;
-    }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-neutral-700 ring-offset-2;
+  }
 
-    @font-face {
-        font-family: 'Space Grotesk';
-        src: url('../../public/fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
-        font-weight: 100 900;
-        font-style: normal;
-    }
+  label {
+    @apply mb-2 block text-sm font-semibold text-neutral-700;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  button {
+    @apply w-full rounded-lg bg-neutral-900 px-4 py-2 font-bold text-white hover:bg-neutral-700;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-neutral-900 hover:bg-neutral-100 hover:text-neutral-700;
+  }
+
+  .btn-icon {
+    @apply rounded-full bg-transparent text-neutral-900 hover:bg-neutral-100 hover:text-neutral-700;
+  }
+
+  input,
+  textarea {
+    @apply w-full rounded-lg border border-neutral-200 p-4;
+  }
+
+  @font-face {
+    font-family: "Syne";
+    src: url("../../public/fonts/Syne-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url("../../public/fonts/SpaceGrotesk-VariableFont_wght.ttf")
+      format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+  }
 }
