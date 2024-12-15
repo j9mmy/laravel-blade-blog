@@ -49,9 +49,24 @@
     @apply rounded-full bg-transparent text-neutral-900 hover:bg-neutral-100 hover:text-neutral-700;
   }
 
+  select {
+    @apply bg-neutral-50;
+  }
+
   input,
-  textarea {
+  textarea,
+  select {
     @apply w-full rounded-lg border border-neutral-200 p-4;
+  }
+
+  p.error {
+    @apply text-sm text-red-500;
+  }
+
+  input.error,
+  textarea.error,
+  select.error {
+    @apply border-red-500;
   }
 
   @font-face {
