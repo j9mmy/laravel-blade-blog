@@ -43,14 +43,26 @@ class PostController extends Controller
         return redirect('/')->with('success', 'Post created successfully');
     }
 
-    public function edit($post)
+    public function edit($postId): View
     {
+        $post = Post::findOrFail($postId);
 
+        return view('edit', [
+            'post' => $post
+        ]);
     }
 
-    public function update($post)
+    public function update(Request $request, $postId): RedirectResponse
     {
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required'
+        ]);
 
+        $post = Post::findOrFail($postId);
+        $post->update($validated);
+
+        return redirect('/')->with('success', 'Post updated successfully');
     }
 
     public function delete($post)

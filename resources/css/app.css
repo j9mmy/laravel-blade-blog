@@ -46,7 +46,7 @@
   }
 
   .btn-icon {
-    @apply rounded-full bg-transparent text-neutral-900 hover:bg-neutral-100 hover:text-neutral-700;
+    @apply rounded-full bg-transparent text-neutral-900 hover:bg-neutral-50 hover:text-neutral-700;
   }
 
   select {

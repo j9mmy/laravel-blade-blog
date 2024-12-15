@@ -14,7 +14,7 @@
 
     <nav class="p-4 fixed top-0 left-0 right-0">
         <div
-            class="max-w-7xl mx-auto flex gap-2 font-semibold bg-white bg-opacity-80 backdrop-blur-sm w-fit rounded-full p-2">
+            class="max-w-7xl mx-auto flex gap-2 font-semibold bg-neutral-200 bg-opacity-50 backdrop-blur-sm w-fit rounded-full p-2">
             <a href="/" class="btn-icon rounded-full w-12 h-12 flex items-center justify-center">
                 <div class="w-6 h-6">
                     <i data-lucide="home"></i>

@@ -8,11 +8,19 @@
     <div class="grid gap-4 md:grid-cols-2">
         @foreach ($posts as $post)
             <article
-                class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all ease-in-out p-4 border border-neutral-100">
+                class="flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-md transition-all ease-in-out p-4 border border-neutral-100">
                 <h2 class="text-xl font-bold text-neutral-800 mb-2">{{ $post->title }}</h2>
-                <p class="text-sm text-neutral-600 mb-4 ">By {{ $post->user->name }} -
-                    {{ $post->created_at->format('d-m-Y') }}</p>
+                <p class="text-sm text-neutral-600 mb-4 ">
+                    By {{ $post->user->name }} - {{ $post->created_at->format('d-m-Y') }}
+                </p>
                 <p class="text-neutral-700">{{ $post->content }}</p>
+
+                <div class="flex gap-2 mt-2 justify-end items-end h-full text-sm">
+                    <button class="w-fit h-fit btn-ghost" onclick="window.location.href='/posts/{{ $post->id }}/edit'">
+                        Edit
+                    </button>
+                </div>
+
             </article>
         @endforeach
     </div>
