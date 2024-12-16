@@ -49,6 +49,10 @@
     @apply rounded-full bg-transparent text-neutral-900 hover:bg-neutral-50 hover:text-neutral-700;
   }
 
+  .btn-destructive {
+    @apply bg-red-500 text-white hover:bg-red-700 hover:text-white;
+  }
+
   select {
     @apply bg-neutral-50;
   }

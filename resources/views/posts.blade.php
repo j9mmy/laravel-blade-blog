@@ -15,10 +15,17 @@
                 </p>
                 <p class="text-neutral-700">{{ $post->content }}</p>
 
-                <div class="flex gap-2 mt-2 justify-end items-end h-full text-sm">
+                <div class="flex gap-2 mt-4 justify-end items-end h-full text-sm">
                     <button class="w-fit h-fit btn-ghost" onclick="window.location.href='/posts/{{ $post->id }}/edit'">
                         Edit
                     </button>
+                    <form action="/posts/{{ $post->id }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="w-fit h-fit btn-destructive bg-white text-neutral-900">
+                            Delete
+                        </button>
+                    </form>
                 </div>
 
             </article>

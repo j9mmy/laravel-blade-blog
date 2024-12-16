@@ -54,8 +54,11 @@ class PostController extends Controller
         return redirect('/')->with('success', 'Post updated successfully');
     }
 
-    public function delete($post)
+    public function delete($postId): RedirectResponse
     {
+        $post = Post::findOrFail($postId);
+        $post->delete();
 
+        return redirect('/')->with('success', 'Post deleted succesfully');
     }
 }
