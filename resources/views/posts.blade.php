@@ -13,7 +13,9 @@
                 <p class="text-sm text-neutral-600 mb-4 ">
                     By {{ $post->user->name }} - {{ $post->created_at->format('d-m-Y') }}
                 </p>
-                <p class="text-neutral-700">{{ $post->content }}</p>
+                <div>
+                    <p class="text-neutral-700 line-clamp-3">{{ $post->content }}</p>
+                </div>
 
                 <div class="flex gap-2 mt-4 justify-end items-end h-full text-sm">
                     <button class="w-fit h-fit btn-ghost" onclick="window.location.href='/posts/{{ $post->id }}/edit'">
