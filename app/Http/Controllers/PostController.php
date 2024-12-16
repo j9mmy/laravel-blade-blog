@@ -21,6 +21,15 @@ class PostController extends Controller
         ]);
     }
 
+    public function show($postId): View
+    {
+        $post = Post::findOrFail($postId);
+
+        return view('show', [
+            'post' => $post
+        ]);
+    }
+
     public function create(): View
     {
         $users = User::select('id', 'name')->get();

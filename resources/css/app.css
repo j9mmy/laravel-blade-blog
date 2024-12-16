@@ -18,7 +18,8 @@
   span,
   label,
   input,
-  textarea {
+  textarea,
+  div {
     font-family: "Space Grotesk", sans-serif;
   }
 

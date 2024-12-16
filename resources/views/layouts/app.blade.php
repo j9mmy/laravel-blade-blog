@@ -12,23 +12,23 @@
 
 <body class="bg-neutral-50 min-h-screen">
 
-    <nav class="p-4 fixed top-0 left-0 right-0">
+    <nav class="p-3 fixed top-0 left-0 right-0">
         <div
-            class="max-w-7xl mx-auto flex gap-2 font-semibold bg-neutral-200 bg-opacity-50 backdrop-blur-sm w-fit rounded-full p-2">
-            <a href="/" class="btn-icon rounded-full w-12 h-12 flex items-center justify-center">
-                <div class="w-6 h-6">
-                    <i data-lucide="home"></i>
+            class="max-w-7xl mx-auto flex gap-1 font-semibold bg-neutral-200 bg-opacity-50 backdrop-blur-sm w-fit rounded-full p-2">
+            <a href="/" class="btn-icon rounded-full w-10 h-10 flex items-center justify-center">
+                <div class="w-5 h-5">
+                    <i data-lucide="home" class="w-5 h-5"></i>
                 </div>
             </a>
-            <a href="/create" class="btn-icon rounded-full w-12 h-12 flex items-center justify-center">
-                <div class="w-6 h-6">
-                    <i data-lucide="plus"></i>
+            <a href="/create" class="btn-icon rounded-full w-10 h-10 flex items-center justify-center">
+                <div class="w-5 h-5">
+                    <i data-lucide="plus" class="w-5 h-5"></i>
                 </div>
             </a>
         </div>
     </nav>
 
-    <main class="py-24 px-4 max-w-5xl mx-auto">
+    <main class="py-20 px-4 max-w-5xl mx-auto">
         @yield('content')
     </main>
 
